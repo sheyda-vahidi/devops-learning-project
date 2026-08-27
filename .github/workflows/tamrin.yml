@@ -8,8 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       APP_ENV: testtt
+      MY_VALIUE: ${{secrets.MY_SECRET}}
     steps:
       - uses: actions/checkout@v4
       - run: echo "$APP_ENV"
-        
+      - run: python -c "import os; assert os.getenv('MY_VALUE')"
     
