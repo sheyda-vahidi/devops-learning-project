@@ -1,0 +1,15 @@
+name: tamrin
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      APP_ENV: testtt
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "$APP_ENV"
+        
+    
