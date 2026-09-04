@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Depends, HTTPException
+from pydantic import BaseModel
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import Session
-from pydantic import BaseModel
 
 from app.database import Base, engine, get_db
 
