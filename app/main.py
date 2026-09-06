@@ -1,10 +1,9 @@
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import Depends, FastAPI, HTTPException
 from pydantic import BaseModel
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import Session
 
 from app.database import Base, engine, get_db
-
 
 app = FastAPI(title="DevOps Learning Project")
 
