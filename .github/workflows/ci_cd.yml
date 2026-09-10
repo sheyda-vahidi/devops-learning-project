@@ -25,9 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: docker build -t ${{ secrets.DOCKER_USERNAME }}/fastapi-service:1.0.0 -f docker/Dockerfile .
+      - run: docker build -t ${{ secrets.DOCKER_USERNAME }}/fastapi-service:${{ github.ref_name }} -f docker/Dockerfile .
       - uses: docker/login-action@v3
         with:
             username: ${{ secrets.DOCKER_USERNAME }}
             password: ${{ secrets.DOCKER_PASSWORD }}
-      - run: docker push ${{ secrets.DOCKER_USERNAME }}/fastapi-service:1.0.0
+      - run: docker push ${{ secrets.DOCKER_USERNAME }}/fastapi-service:${{ github.ref_name }}
