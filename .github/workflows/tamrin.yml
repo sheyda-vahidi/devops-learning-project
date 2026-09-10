@@ -1,16 +1,1 @@
-name: tamrin
-on: 
-  push:
-    branches:
-      - main
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    env:
-      APP_ENV: testtt
-      MY_VALUE: ${{secrets.MY_SECRET}}
-    steps:
-      - uses: actions/checkout@v4
-      - run: echo "$APP_ENV"
-      - run: python -c "import os; assert os.getenv('MY_VALUE')"
-    
+
